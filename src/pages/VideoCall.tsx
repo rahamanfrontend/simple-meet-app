@@ -5,13 +5,13 @@ import { useParams } from "react-router-dom";
 const VideoCall = () => {
   const params = useParams();
   const appId = import.meta.env.VITE_VIDEO_CALL_ID;
-  const token = import.meta.env.VITE_TOKEN;
+  // const token = import.meta.env.VITE_TOKEN;
   // console.log({ id, a });
   const [videoCall, setVideoCall] = useState(false);
   const rtcProps = {
     appId: appId || "test",
     channel: params?.id || "test", // your agora channel
-    token: token, // use null or skip if using app in testing mode
+    token: null, // use null or skip if using app in testing mode
   };
   const callbacks = {
     EndCall: () => setVideoCall(false),
